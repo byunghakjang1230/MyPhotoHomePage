@@ -1,0 +1,94 @@
+			#menu_ a {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                text-decoration: none;
+            }
+
+            #menu_ a.overed {
+                font-size: 110%;
+                color: rgba(102, 191, 255, 0.76);
+            }
+
+            #menu_ ul, #menu_ li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            /***********************************************************/
+
+            #drop_menu div._top_menu {
+                width: 100%;
+                height: 50px;
+                color: #454545;
+                font-size: 40px;
+                text-align: right;
+                font-family: 'Dosis', sans-serif;
+                text-shadow: 0 0 6px rgba(0, 0, 0, 0.68), 2px 2px 10px grey;
+                line-height: 40px;
+            }
+
+            #drop_menu div._sub_menu {
+                width: 100%;
+                height: 50px;
+                color: #c17c4b;
+                font-size: 25px;
+                font-family: 'Dosis', sans-serif;
+            }
+
+            /************************************************************/
+            #menu_ {
+                position: fixed;
+                width: 200px;
+                height: 60px;
+                top: 15px;
+                right: 3%;
+                z-index: 99999999;
+            }
+
+            #menu_ a.drop_menu_bt {
+                float: right;
+                color: #474646;                
+                text-decoration: none;
+                border: 0;
+                display: block;
+            }
+
+            #bt_menu {
+                width: 100%;
+                height: 100%;
+            }
+
+            #menu_ a.drop_menu_bt > i {
+                font-size: 50px;
+            }
+
+            #drop_menu {
+                width: 100%;
+                height: auto;
+            }
+
+            #drop_menu.basic_menu, #bt_menu {
+                padding: 0 20px 0 0;
+            }
+
+            #drop_menu.basic_menu {
+                display: none;
+            }
+
+            #menu_ ul, #menu_ li.li_bt_menu_ {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                list-style: none;
+            }
+
+            #menu_ li.li_drop_menu_ {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                border-radius: 6px;
+                box-shadow: 3px 3px 20px rgba(51, 51, 51, 0.5);
+            }

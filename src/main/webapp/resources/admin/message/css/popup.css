@@ -1,0 +1,69 @@
+		div.row {
+            margin: 10px;
+        }
+
+        ul, li {
+            list-style:none;
+        }
+
+        #content_board {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(185, 185, 185, 0.4);
+            z-index: 50;
+            top: 0;
+            left: 0;
+            display:none;
+        }
+
+        .outter_1 {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .inner_1 {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        #content_box {
+            width: 700px;
+            height: 400px;
+            position: relative;
+            display: inline-block;
+        }
+
+        div.container {
+            width: 100%;
+            height: 100%;
+            padding-top: 15px;
+        }
+
+        #text_read, #text_write {
+            width: 100%;
+            height: 100%;
+            resize: none;
+            border: 1px solid rgba(185, 185, 185, 0.4);
+            outline: none;
+        }
+
+        #send_button {
+            width: 100%;
+            height: 100%;
+        }
+
+        [class*="col-"] {
+            height:100%;
+        }
+
+        #con_no, #con_date, #con_email, #con_name {
+            border-bottom: 1px solid rgba(185, 185, 185, 0.4);
+            text-align:left;
+        }
+
+        #heading {
+            width: 100%;
+        }

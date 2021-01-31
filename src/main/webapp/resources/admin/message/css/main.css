@@ -1,0 +1,279 @@
+		ul { list-style:none; }
+        ul, li {
+            margin:0;
+            padding:0;
+        }
+        a {
+            text-decoration:none;
+            color:black;
+        }
+        a.nowPage {
+        	color:#ff8000;
+        }
+        .inline_box {
+            display:inline;
+            float:left;
+        }
+        #text {
+            width:200px;
+            height:100px;
+            padding:30px 30px;
+            box-sizing:border-box;
+            margin:0 auto;
+        }
+        #list_box{
+            width: 700px;
+            height:auto;
+            margin:0 auto;
+        }
+
+        #list_box div {
+            display:inline;
+            height: 100%;
+            float:left;
+            box-sizing: border-box;
+            padding:0 15px;
+        }
+        #list_box > ul > li {
+            width:100%;
+            margin:5px 0;
+            padding:0 5px;
+            box-sizing:border-box;
+        }
+        #title, #page {
+            height: 30px;
+        }
+
+        #title {
+            border-bottom: 3px double lightgray;
+        }
+
+        #list > ul {
+
+        }
+        
+        #list > ul > li {
+            height:30px;
+            margin:3px 0;
+            border-bottom: 1px solid lightgray;
+        }
+
+        #name {
+            width: 160px;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+        #message {
+            width: 300px;
+            border-left: 1px solid lightgray;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+        #message a:hover {
+            color:chocolate;
+        }
+        
+        #list #date{
+        	font-size: 12px;
+    		padding: 5px 0 0 20px;
+        }
+        
+        #date{
+            width:210px;
+            border-left: 1px solid lightgray;
+        }
+        
+        #page_num {
+            width: 100%;
+            text-align: center;
+        }
+        
+        /*
+        #content_board {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(185, 185, 185, 0.4);
+            z-index: 50;
+            top: 0;
+            left: 0;
+            display:none;
+        }        
+        .outter_1 {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .inner_1 {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        #content_box {
+            width: 700px;
+            height: 400px;
+            background-color: white;
+            position: relative;
+            display: inline-block;
+        }
+        #content_box div {
+            height:100%;
+            display:inline;
+            box-sizing:border-box;
+            text-align:left;
+        }
+        #content_box > ul{
+            width:100%;
+            height:100%;
+        }
+        #content_box > ul > li{
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        li.small_li {
+            height: 40px;
+            box-sizing: border-box;
+            border-bottom: 1px solid lightgray;
+        }
+        li.message_li {
+            height: 140px;
+            box-sizing: border-box;
+        }
+        #content_box .con_info {
+            padding: 10px 10px;
+            margin:0 20px;
+            border-left:1px solid lightgray;
+        }
+        #con_no {
+            width: 150px;
+            float: left; 
+        }
+        #con_date {
+            width: 300px;
+            float: right;
+        }
+        
+        #exit {
+            width: 50px;
+            float: right;
+        }
+        
+        #exit_button {
+            width: 90%;
+            height: 90%;
+            background-color: rgba(224, 224, 224, 0.31);
+            border-style: none;
+            outline: none;
+            border: 1px solid darkgray;
+            box-shadow: 0px 0px 1px black, 1px 1px 1px black;
+        }
+        #con_email {
+            width: 350px;
+            float: left;
+        }
+        
+        #con_name {
+            float: right;
+            width: 250px;
+        }
+        /*
+        #con_message {
+            width: 100%;
+            float: left;
+            padding: 0 5px;
+        }
+        /*
+        #send_box {
+            float: left;
+            width: 100%;
+            height: 100%;
+            padding: 0 5px;
+        }
+        /*
+        #con_send_message {
+            float: left;
+            width: 80%;
+        }
+        
+        #send {
+            float: left;
+            width: 20%;
+        }
+        
+        #content_box textarea {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            resize: none;
+            outline: none;
+            border: 1px solid lightgray;
+            padding: 10px 10px;
+            font-size:16px;
+        }
+        
+        #send_button {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            font-size: 40px;
+            font-family: initial;
+            outline: none;
+        }
+        */
+        /*************************************************************/
+        .cont {
+            width: 100%;
+            height: 100%;
+            margin: 40px auto;
+        }
+
+        .outer {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .inner {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .centered {
+            position: relative;
+            display: inline-block;
+            width: 800px;
+        }
+        
+        th, td {
+        	text-align: center;
+        }
+      
+        
+        /*********************** 로딩 세팅 ***************************/
+        
+        #loading {
+        	display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.50);
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-image: url(/resources/image/loading.gif);
+            background-position: center center;
+            background-repeat: no-repeat;
+            box-sizing:border-box;
+        }
+        
+        #loading.load_proc {
+            display:block;
+        }
+        
+        body.load_proc {
+        	overflow : hidden;
+        }

@@ -1,0 +1,181 @@
+		ul {list-style:none;}
+        ul, li{margin:0; padding:0;}
+		
+		.main_box {
+            width:800px;
+            display:block;
+        }
+        #top_ {
+            height:90px;
+        }
+        #input_ {
+            height: 200px;
+        }
+        #result_ {
+            height: auto;
+        }
+
+        /*******************************************/
+        #result_field_ {
+            height: 200px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        #result_field_ div {
+            box-sizing:border-box;
+        }
+        
+        #result_field_ > div {
+            padding: 5px;
+            float: left;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .img {
+            width: 200px;
+            border:3px double black;
+            background-size:contain;
+            background-repeat:no-repeat;
+            background-position-x:center;
+            background-position-y:center;
+        }
+        .content_box {
+            width:450px;
+        }
+        .option_bt {
+            width:130px;
+        }
+        .option_bt > button {
+            width: 100%;
+            display: block;
+            height: 50%;
+        }
+
+        .content_box div {
+            display:block;
+        }
+        .content_box .text {
+            height: 25px;
+        }
+        .content_box .content {
+            height: auto;
+        }
+        #title {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #context {
+            width: 100%;
+            box-sizing: border-box;
+            height:100px;
+            resize:none;
+        }
+
+        /****************************************/
+        #top_ div {
+            box-sizing:border-box;
+        }
+        #top_ > div {
+            float: left;
+            height: 100%;
+        }
+        #top_cate_ {
+            width: 500px;
+            padding:0;
+        }
+        #top_send_ {
+            width: 100px;
+            padding:5px;
+        }
+        .cate {
+            height:50%;
+            padding : 5px;
+        }
+        .cate > div {
+            float:left;
+            padding: 5px;
+        }
+        .cate .text{
+            width:30%;
+            height:100%;
+        }
+        .cate .content{
+            width: 70%;
+            height: 100%;
+        }
+        #top_cate_ select {
+            width: 40%;
+            font-size: 15px;
+            height:25px;
+        }
+        #send_bt {
+            width:100%;
+            height:100%;
+        }
+
+        /**************************************/
+
+        #input_ > div {
+            border:1px solid black;
+
+            position: relative;
+            box-sizing:border-box;
+            float:left;
+            height:100%;
+        }
+
+        #input_field_ {
+            width: 80%;
+            background-color: aliceblue
+        }
+        #input_field_ > div {
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+        #input_field_ > .layer {
+            z-index:10;
+        }
+        #input_field_ > .text {
+            font-size:30px;
+            text-align:center;
+            line-height:200px;
+            z-index:0;
+        }
+        #input_button_ {
+            width:20%;
+        }
+        #img_in {
+            width:100%;
+            height:100%;
+
+        }
+        #file {
+            display:none;
+        }
+        #change.selected{
+            background-color: #ffd800;
+        }
+        /*************************로딩 세팅****************************/
+        #loading {
+        	display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.50);
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-image: url(/resources/image/loading.gif);
+            background-position: center center;
+            background-repeat: no-repeat;
+            box-sizing:border-box;
+        }
+        #loading.load_proc {
+            display:block;
+        }
+        body.load_proc {
+        	overflow : hidden;
+        }

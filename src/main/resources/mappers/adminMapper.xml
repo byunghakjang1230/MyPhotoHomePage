@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.hilu0318.mapper.Admin">
+	
+	<insert id="insertVisiterInfo">
+	INSERT 
+	  INTO INFLOW_INFO 
+	       ( country
+	       , countryCode
+	       , region
+	       , regionName
+	       , city
+	       , lat
+	       , lon
+	       , timezone
+	       , as_
+	       , query
+	       , status
+	       , regidate
+	       )
+	VALUES ( #{country}
+		   , #{countryCode}
+		   , #{region}
+		   , #{regionName}
+		   , #{city}
+		   , #{lat}
+		   , #{lon}
+		   , #{timezone}
+		   , #{as}
+		   , #{query}
+		   , #{status}
+		   , DATE_FORMAT(now(), '%Y%m%d%H%i%s')
+		   )
+	</insert>
+	
+	
+	<select id="totalPosition" resultType="VisiterPositionVO">
+	SELECT lat
+		 , lon 
+	  FROM INFLOW_INFO 
+	 WHERE status != 'fail'
+	 
+	</select>
+	
+	<select id="inquireVisiterST" resultType="VisiterSTVO">
+	SELECT count(*) as count, countryCode, country
+	  FROM INFLOW_INFO
+	 WHERE regidate >= #{date}
+	 GROUP BY countryCode
+	</select>
+	
+	<select id="inquireCount" resultType="int">
+	SELECT count(*) 
+	  FROM INFLOW_INFO 
+	 WHERE regidate >= #{date}
+	</select>
+	
+	<select id="inquireMember" resultType="MemberVO">
+	SELECT id, password, name, nickname, regidate, authority 
+	  FROM MEMBER 
+	 WHERE id = #{id}
+	</select>
+	
+	
+	<insert id="insertMessage">
+	INSERT 
+	  INTO MESSAGE 
+	  	   ( name
+	  	   , email
+	  	   , message
+	  	   , regdate
+	  	   ) 
+	VALUES ( #{name}
+		   , #{email}
+		   , #{message}
+		   , DATE_FORMAT(now(), '%Y%m%d%H%i%s')
+		   )
+	</insert>
+	
+	<select id="totalMessage" resultType="int">
+	SELECT count(*) 
+	  FROM MESSAGE
+	</select>
+	
+	<select id="inquireMessageList" resultType="MessageVO">
+	SELECT no
+		 , name
+		 , email
+		 , message
+		 , regdate 
+	  FROM MESSAGE 
+	 ORDER BY no DESC LIMIT #{start}, #{nop}
+	</select>
+	
+</mapper>

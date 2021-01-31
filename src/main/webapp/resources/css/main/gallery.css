@@ -1,0 +1,125 @@
+	#header {
+    	opacity:0;
+	}
+    #main_page_menu{
+    	position:absolute;
+        width:100%;
+        height:100%;
+        background-color:white;
+		left:0;
+        top:0;
+	}
+
+           #main_page_menu a, #menu_ a {
+               margin:0;
+               padding:0;
+               border:0;
+               text-decoration:none;
+           }
+
+           #main_page_menu a:hover {
+               color:cornflowerblue;
+           }
+
+           #main_page_menu_box {
+               width: 80%;
+               float: right;
+               margin: 0 30px 0 0;
+               top: 40px;
+               position: relative;
+           }
+
+           #menu_ ul, #menu_ li, #main_page_menu ul, #main_page_menu li {
+               list-style: none;
+               margin: 0;
+               padding: 0;
+           }
+           /***********************************************************/
+           #main_page_menu_box div.top_name {
+               width:100%;
+               height:70px;
+               color:black;
+               font-size:47px;
+               font-family: 'Crimson Text', serif;
+           }
+
+           #main_page_menu_box div.top_menu {
+               width:100%;
+               height:55px;
+               color: #454545;
+               font-size:40px;
+               font-family: 'Dosis', sans-serif;
+           }
+
+           #main_page_menu_box div.sub_menu {
+               width:100%;
+               height:40px;
+               color: #c17c4b;
+               font-size:25px;
+               font-family: 'Dosis', sans-serif;
+           }
+
+           #drop_menu div._top_menu {
+               width: 100%;
+               height: 40px;
+               color: #454545;
+               font-size: 25px;
+               font-family: 'Dosis', sans-serif;
+           }
+
+           #drop_menu div._sub_menu {
+               width:100%;
+               height:30px;
+               color: #c17c4b;
+               font-size:20px;
+               font-family: 'Dosis', sans-serif;
+           }
+
+           /************************************************************/
+           #menu_ {
+               position: relative;
+               width: 100%;
+               height: 35px;
+               z-index: 99999999;
+           }
+           #menu_ a.drop_menu_bt {
+               float:right;
+               color: black;
+               text-decoration: none;
+               border: 0;
+               display: block;
+           }
+           #bt_menu {
+               width: 100%;
+               height: 100%;
+           }
+           #menu_ a.drop_menu_bt > i {
+               font-size: 30px;
+           }
+           #drop_menu {
+               width: 100%;
+               height: auto;
+               background-color: white;
+           }
+
+           #drop_menu.basic_menu, #bt_menu {
+               padding: 0 20px 0 0;
+           }
+
+           #drop_menu.basic_menu {
+               display:none;
+           }
+
+           #menu_ ul, #menu_ li.li_bt_menu_ {
+               margin: 0;
+               padding: 0;
+               width: 100%;
+               height: 100%;
+               list-style: none;
+           }
+           #menu_ li.li_drop_menu_{
+               width:100%;
+               height:auto;
+               margin:0;
+               padding:0;
+           }

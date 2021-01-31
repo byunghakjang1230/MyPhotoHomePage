@@ -1,0 +1,29 @@
+ 			@keyframes linktogm{
+                to {
+                    opacity: 0;
+                    background-color: white;
+                }
+            }
+            @keyframes linktopf{
+                to {
+                    opacity: 0;
+                    background-color: #242629;
+                }
+            }
+
+            body.linktogm {
+               animation-name:linktogm;
+               animation-duration:0.6s;
+               animation-fill-mode:both;
+            }
+            body.linktopf {
+                animation-name: linktopf;
+                animation-duration: 0.6s;
+                animation-fill-mode: both;
+            }
+            textarea {
+                resize:none;
+            }
+            .in_d.empty {
+                border: 1px solid rgba(255, 105, 0, 0.59);
+            }

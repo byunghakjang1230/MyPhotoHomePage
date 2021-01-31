@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:annotation-config />
+	<tx:annotation-driven />
+	
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+	p:driverClassName="com.mysql.cj.jdbc.Driver"
+	p:url="jdbc:mysql://localhost:3306/mph?serverTimezone=Asia/Seoul"
+	p:username="jbh" p:password="jbh1230"
+	/>
+	
+	<bean id="filePath" class="java.lang.String" c:arg0="/usr/local/Tomcat/resources/my_photo_homepage/imagedata" />
+	<bean id="tempPath" class="java.lang.String" c:arg0="/usr/local/Tomcat/resources/my_photo_homepage/phototemp" />
+	
+	<!-- 여기까지 수정해야 될 것들. -->
+	<!-- 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+	p:driverClassName="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+	p:url="jdbc:log4jdbc:mysql://localhost:3306/mph?serverTimezone=Asia/Seoul"
+	p:username="jbh" p:password="jbh1230"
+	/>
+	
+	<bean id="filePath" class="java.lang.String" c:arg0="C:\zzz\upload" />
+	<bean id="tempPath" class="java.lang.String" c:arg0="C:\zzz\phototemp" />
+	 -->
+	
+	<!-- 이 아래는 기본정보들. -->
+	
+	<bean id="instaAPI" class="java.lang.String" c:arg0="https://api.instagram.com/v1/users/self/media/recent/?access_token=3189850207.81f2b30.cb5356e0ca3c45c59379eb19c49b97d6%20&amp;count=9" />
+	<bean id="ipAPIfront" class="java.lang.String" c:arg0="http://ip-api.com/json/" />
+	<bean id="ipAPIback" class="java.lang.String" c:arg0="?fields=country,countryCode,region,regionName,city,lat,lon,timezone,as,query,status" />
+	
+	<bean id="visiterCookie" class="java.lang.String" c:arg0="bh_p_home_f_v" />
+	<bean id="visiterCookieMaxAge" class="java.lang.Integer" c:value="10800"/>
+	
+	<bean id="msgSendCookie" class="java.lang.String" c:arg0="msg_s_rg_s_c" />
+	<bean id="msgSendCookieMaxAge" class="java.lang.Integer" c:value="1800" />
+	
+	<bean id="lineOfPage" class="java.lang.Integer" c:value="10" />
+	<bean id="numOfLine" class="java.lang.Integer" c:value="5" />
+	
+		
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+	p:dataSource-ref="dataSource"
+	p:configLocation="classpath:/mybatis-config.xml"
+	p:mapperLocations="classpath:/mappers/**/*Mapper.xml"
+	/>
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" 
+	c:sqlSessionFactory-ref="sqlSessionFactory"
+	/>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+	p:dataSource-ref="dataSource"
+	/>
+	
+	<context:component-scan base-package="com.jbh.dao"/>
+	<context:component-scan base-package="com.jbh.service.*"/>
+	<context:component-scan base-package="com.jbh.controller.*"/>
+	<context:component-scan base-package="com.jbh.test.*"/>
+
+	<bean id="mailSender" 
+	class="org.springframework.mail.javamail.JavaMailSenderImpl"
+	p:host="smtp.gmail.com" p:port="587"
+	p:username="byunghak.photo.1230@gmail.com"
+	p:password="#2LmtV&amp;A8(X3KW"
+	p:defaultEncoding="UTF-8" >
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="mailDefaultTitle" class="java.lang.String" c:arg0="from byunghakphoto.cafe24.com. Thank you for your message." />
+	
+</beans>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.hilu0318.mapper.Photo">	
+
+	<select id="totalImage" resultType="int">
+	SELECT count(*) 
+	  FROM PHOTO_INFO
+	</select>
+	
+	<select id="inquireMaincate" resultType="String">
+	SELECT * 
+	  FROM MAINCATE
+	</select>
+	
+	<select id="inquireSubcate" resultType="String">
+	SELECT subcate 
+	  FROM SUBCATE 
+	 WHERE maincate = #{maincate}
+	</select>
+	
+	<select id="inquireMainBGI" resultType="String">
+	SELECT filename
+	  FROM PHOTO_INFO 
+	 WHERE maincate = 'main_bgimg' 
+	 ORDER BY no DESC
+	</select>
+	
+	<select id="inpuirePhoto" resultType="PhotosVO">
+	SELECT no, thumbname, filename, title, context, maincate, subcate
+	  FROM PHOTO_INFO
+	 WHERE no = #{no}
+	</select>
+	
+	<select id="inpuirePhotolist" resultType="PhotosVO">
+	SELECT no, thumbname, filename, title, context, maincate, subcate
+	  FROM PHOTO_INFO
+	 WHERE maincate = #{maincate} and subcate = #{subcate}
+	 ORDER BY no DESC
+	</select>
+	
+	<insert id="insertImageFile">
+	INSERT 
+	  INTO PHOTO_INFO 
+		   ( thumbname
+		   , filename
+		   , title
+		   , context
+		   , maincate
+		   , subcate
+		   ) 
+	VALUES ( #{thumbname}
+		   , #{filename}
+		   , #{title}
+		   , #{context}
+		   , #{maincate}
+		   , #{subcate}
+		   )
+	</insert>
+	
+	<delete id="deleteImage">
+	DELETE 
+	  FROM PHOTO_INFO 
+	 WHERE no = #{no}
+	</delete>
+	
+	<update id="updateImageInfo">
+	UPDATE PHOTO_INFO 
+	   SET thumbname = #{thumbname}
+	     , filename  = #{filename}
+	     , maincate  = #{maincate}
+	     , subcate   = #{subcate}
+	     , title     = #{title}
+	     , context   = #{context} 
+	 WHERE no = #{no}
+	</update>
+	
+</mapper>

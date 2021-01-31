@@ -1,0 +1,64 @@
+			/***********************************************************/
+           
+
+           #drop_menu div._top_menu {
+               width: 100%;
+               height: 40px;
+               color: #454545;
+               font-size: 25px;
+               font-family: 'Dosis', sans-serif;
+           }
+
+
+           /************************************************************/
+           #menu_ {
+               position: relative;
+               width: 100%;
+               height: 35px;
+               z-index: 99999999;
+           }
+
+           #menu_ a {
+               border:0;
+           }
+           #menu_ a.drop_menu_bt {
+               float:right;
+               color: black;
+               text-decoration: none;
+               border: 0;
+               display: block;
+           }
+           #bt_menu {
+               width: 100%;
+               height: 100%;
+           }
+           #menu_ a.drop_menu_bt > i {
+               font-size: 30px;
+           }
+           #drop_menu {
+               width: 100%;
+               height: auto;
+               background-color: white;
+           }
+
+           #drop_menu.basic_menu, #bt_menu {
+               padding: 0 1em 2em 1em;
+           }
+
+           #drop_menu.basic_menu {
+               display:none;
+           }
+
+           #menu_ ul, #menu_ li.li_bt_menu_ {
+               margin: 0;
+               padding: 0;
+               width: 100%;
+               height: 100%;
+               list-style: none;
+           }
+           #menu_ li.li_drop_menu_{
+               width:100%;
+               height:auto;
+               margin:0;
+               padding:0;
+           }
